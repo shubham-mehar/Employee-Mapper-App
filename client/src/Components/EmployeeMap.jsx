@@ -34,7 +34,7 @@ const EmployeeMap = () => {
       },
     };
 
-    fetch('http://localhost:5000/employees', {
+    fetch('https://employee-mapper-api.onrender.com/employees', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const EmployeeMap = () => {
   };
 
   const handleUpdateLocation = (employeeId) => {
-    fetch(`http://localhost:5000/employees/${employeeId}`, {
+    fetch(`https://employee-mapper-api.onrender.com/employees/${employeeId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ const EmployeeMap = () => {
       setTimeout(() => {
         markerCluster = L.markerClusterGroup();
 
-        fetch('http://localhost:5000/employees')
+        fetch('https://employee-mapper-api.onrender.com/employees')
           .then((response) => response.json())
           .then((data) => {
             const markers = data.map((employee) => {
